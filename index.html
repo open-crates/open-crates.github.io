@@ -42,6 +42,9 @@
 
     footer{margin-top:40px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.08);padding-top:16px}
     .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+    .footlinks{display:flex;gap:12px;flex-wrap:wrap}
+    .footlinks a{text-decoration:none;color:var(--muted)}
+    .footlinks a:hover{color:var(--text)}
   </style>
 </head>
 <body>
@@ -51,7 +54,7 @@
       <nav>
         <a href="#how">How it works</a>
         <a href="#downloads">Downloads</a>
-        <a href="#docs">Docs</a>
+        <a href="/docs/">Docs</a>
         <a href="https://github.com/open-crates" target="_blank" rel="noreferrer">GitHub</a>
       </nav>
     </header>
@@ -62,7 +65,7 @@
         <p class="sub">Open Crates is a desktop app that converts playlists from <strong>Spotify</strong>, <strong>YouTube</strong>, and <strong>Apple Music</strong> into <strong>Serato crates</strong> — so your library stays DJ-ready.</p>
         <div class="cta">
           <a class="btn primary" href="#downloads">Get the app <small>(soon)</small></a>
-          <a class="btn" href="#docs">Read the docs</a>
+          <a class="btn" href="/docs/">Read the docs</a>
         </div>
       </div>
       <aside class="card" id="how">
@@ -102,18 +105,22 @@
     <section class="card" id="docs" style="margin-top:14px">
       <h3>Docs</h3>
       <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.55">
-        This site is the starting point. Next we’ll add pages for:
+        Start here: <a href="/docs/">open-crates.github.io/docs/</a>
       </p>
       <ul style="margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.55">
         <li>Setup (Spotify/YouTube/Apple Music authentication)</li>
         <li>Export format details (Serato crate structure)</li>
         <li>Troubleshooting + known issues</li>
-        <li>Privacy policy + terms</li>
       </ul>
     </section>
 
     <footer>
       <div>© <span id="y"></span> Open Crates</div>
+      <div class="footlinks">
+        <a href="/terms.html">Terms</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/docs/">Docs</a>
+      </div>
       <div class="mono">open-crates.github.io</div>
     </footer>
   </div>
