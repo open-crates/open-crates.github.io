@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Docs • Open Crates</title>
+  <meta name="description" content="Documentation for Open Crates." />
+  <style>
+    :root{--bg:#070A12;--card:#0E1324;--text:#EAF0FF;--muted:#AAB4D6;--brand:#7C5CFF;--brand2:#22D3EE;--line:rgba(255,255,255,.12)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:radial-gradient(900px 500px at 15% 0%, rgba(124,92,255,.22), transparent 60%),var(--bg); color:var(--text)}
+    a{color:inherit}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 80px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px;text-decoration:none}
+    .mark{width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand2))}
+    nav{display:flex;gap:10px;flex-wrap:wrap}
+    nav a{font-size:14px;color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:10px;border:1px solid transparent}
+    nav a:hover{color:var(--text);border-color:var(--line);background:rgba(255,255,255,.03)}
+
+    h1{margin:0 0 6px;font-size:34px}
+    .sub{margin:0 0 18px;color:var(--muted);line-height:1.55}
+
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width: 900px){.grid{grid-template-columns:1fr}}
+    .card{background:rgba(14,19,36,.72);border:1px solid var(--line);border-radius:18px;padding:18px;backdrop-filter: blur(10px)}
+    .card h2{margin:0 0 10px;font-size:18px}
+    p,li{color:var(--muted);line-height:1.6}
+    code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;color:#D9E2FF}
+    .note{font-size:13px;color:var(--muted);margin-top:10px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="logo" href="/"><span class="mark" aria-hidden="true"></span>Open Crates</a>
+      <nav>
+        <a href="/docs/">Docs</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="https://github.com/open-crates" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Docs</h1>
+      <p class="sub">Starter documentation for Open Crates. We’ll expand this as the first beta ships.</p>
+
+      <div class="grid">
+        <section class="card">
+          <h2>Getting started</h2>
+          <ol>
+            <li>Install Open Crates (download link will be added).</li>
+            <li>Open the app and choose a music service to connect.</li>
+            <li>Authorize access in your browser (OAuth).</li>
+            <li>Select a playlist and export a Serato crate.</li>
+          </ol>
+          <p class="note">Tip: Keep your Serato library backed up before importing new crates.</p>
+        </section>
+
+        <section class="card">
+          <h2>Connecting services</h2>
+          <ul>
+            <li><strong>Spotify:</strong> OAuth login (PKCE). No client secret is stored in the app.</li>
+            <li><strong>YouTube:</strong> OAuth login. Exports will map playlist entries to searchable track metadata where possible.</li>
+            <li><strong>Apple Music:</strong> May require a short-lived developer token issued by a minimal backend service.</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>Export behavior</h2>
+          <ul>
+            <li>Exports create a Serato crate file for the selected playlist.</li>
+            <li>Track matching depends on available metadata from each platform.</li>
+            <li>If a track can’t be matched, it will be listed in the export report.</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>Troubleshooting</h2>
+          <ul>
+            <li><strong>Login loop:</strong> try disconnecting and reconnecting the service.</li>
+            <li><strong>Missing tracks:</strong> some platforms don’t expose full metadata; try searching by title/artist.</li>
+            <li><strong>Serato can’t see crate:</strong> confirm the crate was exported into the correct Serato library folder.</li>
+          </ul>
+          <p class="note">If you hit a bug, open an issue on GitHub with your OS + a short description.</p>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
