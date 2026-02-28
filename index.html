@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Open Crates</title>
+  <meta name="description" content="Open Crates converts Spotify, YouTube, and Apple Music playlists into Serato crates." />
+  <style>
+    :root{--bg:#070A12;--card:#0E1324;--text:#EAF0FF;--muted:#AAB4D6;--brand:#7C5CFF;--brand2:#22D3EE;--line:rgba(255,255,255,.12)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:radial-gradient(1200px 600px at 20% 10%, rgba(124,92,255,.35), transparent 55%),radial-gradient(900px 500px at 80% 30%, rgba(34,211,238,.25), transparent 60%),var(--bg); color:var(--text)}
+    a{color:inherit}
+    .wrap{max-width:1060px;margin:0 auto;padding:28px 18px 80px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
+    .mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand2));box-shadow:0 10px 35px rgba(124,92,255,.25)}
+    nav{display:flex;gap:14px;flex-wrap:wrap}
+    nav a{font-size:14px;color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:10px;border:1px solid transparent}
+    nav a:hover{color:var(--text);border-color:var(--line);background:rgba(255,255,255,.03)}
+
+    .hero{margin-top:42px;display:grid;grid-template-columns:1.3fr .9fr;gap:22px;align-items:start}
+    @media (max-width: 900px){.hero{grid-template-columns:1fr}}
+    h1{font-size:54px;line-height:1.02;margin:0 0 12px}
+    .sub{font-size:18px;line-height:1.5;color:var(--muted);max-width:52ch;margin:0 0 22px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:11px 14px;border-radius:14px;border:1px solid var(--line);text-decoration:none;font-weight:650}
+    .btn.primary{background:linear-gradient(135deg, rgba(124,92,255,.92), rgba(34,211,238,.55));border-color:transparent}
+    .btn small{font-weight:600;color:rgba(255,255,255,.85)}
+
+    .card{background:rgba(14,19,36,.72);border:1px solid var(--line);border-radius:18px;padding:16px 16px 14px;backdrop-filter: blur(10px)}
+    .card h3{margin:0 0 10px;font-size:16px}
+    .steps{display:grid;gap:10px}
+    .step{display:flex;gap:10px;align-items:flex-start;padding:10px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+    .badge{flex:0 0 auto;width:26px;height:26px;border-radius:9px;display:grid;place-items:center;background:rgba(124,92,255,.18);border:1px solid rgba(124,92,255,.35);color:#DCD5FF;font-weight:800}
+    .step p{margin:0;color:var(--muted);font-size:14px;line-height:1.35}
+
+    .grid{margin-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media (max-width: 900px){.grid{grid-template-columns:1fr}}
+    .tile{padding:16px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+    .tile h4{margin:0 0 8px;font-size:16px}
+    .tile p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
+
+    footer{margin-top:40px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.08);padding-top:16px}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo"><div class="mark" aria-hidden="true"></div>Open Crates</div>
+      <nav>
+        <a href="#how">How it works</a>
+        <a href="#downloads">Downloads</a>
+        <a href="#docs">Docs</a>
+        <a href="https://github.com/open-crates" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Playlists in. Serato crates out.</h1>
+        <p class="sub">Open Crates is a desktop app that converts playlists from <strong>Spotify</strong>, <strong>YouTube</strong>, and <strong>Apple Music</strong> into <strong>Serato crates</strong> — so your library stays DJ-ready.</p>
+        <div class="cta">
+          <a class="btn primary" href="#downloads">Get the app <small>(soon)</small></a>
+          <a class="btn" href="#docs">Read the docs</a>
+        </div>
+      </div>
+      <aside class="card" id="how">
+        <h3>How it works</h3>
+        <div class="steps">
+          <div class="step"><div class="badge">1</div><p>Connect your music service (Spotify / YouTube / Apple Music).</p></div>
+          <div class="step"><div class="badge">2</div><p>Select a playlist and choose export options.</p></div>
+          <div class="step"><div class="badge">3</div><p>Export a Serato crate and start mixing.</p></div>
+        </div>
+        <p style="margin:12px 0 0;color:var(--muted);font-size:12.5px">Note: API credentials are handled securely. Never paste secrets into public repos.</p>
+      </aside>
+    </section>
+
+    <section class="grid">
+      <div class="tile">
+        <h4>Built for DJs</h4>
+        <p>Designed around crates, not spreadsheets. Keep your prep workflow fast and repeatable.</p>
+      </div>
+      <div class="tile">
+        <h4>Local-first</h4>
+        <p>The app runs on your machine. You control the library and the output files.</p>
+      </div>
+      <div class="tile">
+        <h4>Open roadmap</h4>
+        <p>We’ll publish releases, docs, and issue tracking publicly on GitHub as we go.</p>
+      </div>
+    </section>
+
+    <section class="card" id="downloads" style="margin-top:18px">
+      <h3>Downloads</h3>
+      <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.45">
+        Coming soon. We’ll add installers here (Mac / Windows) once the first beta is ready.
+      </p>
+      <p style="margin:10px 0 0;color:var(--muted);font-size:13px">Want early access? Open an issue in the repo and we’ll tag you for betas.</p>
+    </section>
+
+    <section class="card" id="docs" style="margin-top:14px">
+      <h3>Docs</h3>
+      <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.55">
+        This site is the starting point. Next we’ll add pages for:
+      </p>
+      <ul style="margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.55">
+        <li>Setup (Spotify/YouTube/Apple Music authentication)</li>
+        <li>Export format details (Serato crate structure)</li>
+        <li>Troubleshooting + known issues</li>
+        <li>Privacy policy + terms</li>
+      </ul>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> Open Crates</div>
+      <div class="mono">open-crates.github.io</div>
+    </footer>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
